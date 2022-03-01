@@ -1,0 +1,16 @@
+{
+    "name": "C99-Node-Wrapper",
+    "version": "1.0.0",
+    "main": "api.js",
+    "directories": {
+        "example": "example"
+    },
+    "scripts": {
+        "install": "npm i axios --save",
+        "example": "cd example && node index.js"
+    },
+    "author": "",
+    "dependencies": {
+        "axios": "^0.26.0"
+    }
+}
