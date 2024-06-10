@@ -1,45 +1,90 @@
-# Information
+# c99 API Wrapper
+
 This API wrapper was made for [c99.nl](https://c99.nl) and their amazing API.
 You can purchase and API key from them.
 
-# Setup
+## Installation
 
-Copy api.js to your project.
-to include it in your project you need to have the axios node package.
+First, ensure you have Node.js installed. Then, install axios if you haven't already:
 
-to install this run `npm i axios --save` in your terminal.
-you can also do `npm run install` if you clone the project
-
-you can include the api file and its functions with `const api = require("./api");`
-
-In a file called `config.json` add the variable `apikey`
-
-like so:
-
-```json
-{
-    "apikey": "api_key"
-}
+```bash
+npm install axios
 ```
-and replace `api_key` with your actual api key from [c99](https://c99.nl)
 
-you can then call api functions with commands like
+Next, save the provided `c99.js` file in your project directory.
 
-```js
+## Usage
 
-api.getSubDomains("https://google.com")
+Here is how you can use this API wrapper in your project:
+
+1. Import the `c99` class.
+2. Instantiate the class with your API key.
+3. Call the desired method and handle the response.
+
+### Example
+
+```javascript
+const c99 = require("./c99");
+const api = new c99("api-key-here");
+
+// Example usage of getSubDomains
+api.getSubDomains("google.com")
     .then(data => {
         console.log(data);
     })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 ```
 
-or 
+### Available Methods
 
-```js
-api.getPhoneInfo(31612345678)
-    .then(data => {
-        console.log(data);
-    })
-```
+- `getSubDomains(domain)`
+- `getPhoneInfo(number)`
+- `getSkypeUserInfo(username)`
+- `getSkypeIPInfo(ip)`
+- `FirewallResolver(domain)`
+- `PortScanner(ip)`
+- `CheckPort(host, port)`
+- `Ping(ip)`
+- `HostnameResolver(ip)`
+- `dnschecker(domain)`
+- `HostToIP(host)`
+- `IP2Domains(ip)`
+- `AlexaRankChecker(url)`
+- `WhoisChecker(domain)`
+- `ScreenshotTool(url)`
+- `GeoIP(host)`
+- `WebsiteUpOrDownChecker(host)`
+- `SiteReputationChecker(url)`
+- `GetWebsiteHeaders(host)`
+- `LinkBackup(url)`
+- `URLShortener(url)`
+- `RandomStringPicker(textfile)`
+- `Dictionary(word)`
+- `ImageReverse(url)`
+- `SynonymFinder(word)`
+- `EmailValidator(email)`
+- `DisposableMailCheck(email)`
+- `IPValidator(ip)`
+- `TORChecker(ip)`
+- `Translator(text, tolanguage)`
+- `RandomInfoGenerator(gender)`
+- `YoutubeVideoDetails(videoid)`
+- `YoutubeToMP3(videoid)`
+- `IPLogger(action)`
+- `BitcoinBalance(address)`
+- `EthereumBalance(address)`
+- `CurrencyConverter(amount, from, to)`
+- `CurrencyRates(source)`
+- `WeatherChecker(location, unit)`
+- `QRCodeGenerator(string, size)`
+- `TextParser(url)`
+- `ProxyDetector(ip)`
+- `PasswordGenerator(length, include, customlist)`
+- `RandomNumberGenerator(length, between)`
+- `LicenseKeyGenerator(template, amount)`
+- `EitherOr()`
+- `GIFFinder(keyword)`
 
-All api calls are async, therefor they can be used in an async function.
+This updated class includes methods for all the endpoints listed on the c99.nl website. Each method follows the same pattern, making an HTTP GET request to the corresponding API endpoint and returning the response data. If you need any more endpoints added or modifications, please let me know!

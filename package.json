@@ -1,6 +1,6 @@
 {
     "name": "C99-Node-Wrapper",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "main": "api.js",
     "directories": {
         "example": "example"
@@ -11,6 +11,6 @@
     },
     "author": "",
     "dependencies": {
-        "axios": "^0.26.0"
+        "axios": "^0.26.1"
     }
 }
